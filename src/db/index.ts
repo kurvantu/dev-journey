@@ -9,8 +9,8 @@ import { BOOTSTRAP_SQL } from "./schema";
  *  - Local file by default:   file:./data/app.db
  *  - Or a remote libSQL/Turso: SQLITE_URL=libsql://… + SQLITE_AUTH_TOKEN
  */
-const url = process.env.SQLITE_URL || "file:./data/app.db";
-const authToken = process.env.SQLITE_AUTH_TOKEN || undefined;
+const url = process.env.TURSO_DATABASE_URL || "file:./data/app.db";
+const authToken = process.env.TURSO_AUTH_TOKEN  || undefined;
 
 if (url.startsWith("file:")) {
   const filePath = url.slice("file:".length);
